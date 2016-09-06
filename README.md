@@ -1,5 +1,5 @@
 # OmniSim
-A simulation of the various devices and alien transformations from the Cartoon Network series, Ben 10. This project is developed by Warped2713 for ThatOmniTrixGuy.
+A simulation of the various devices and alien transformations from the Cartoon Network series, Ben 10. This project is developed by [Warped2713](https://github.com/Warped2713/) for [ThatOmnitrixGuy](http://that-omnitrix-guy.tumblr.com/).
 
 ### About
 TBD
@@ -17,7 +17,7 @@ Features for Prototype 0.0.0 include:
 The full list of upcoming features can be found in the living Update Log document (link tbd).
 
 ### Authors and Contributors
-The OmniSim project was conceived and is designed by [ThatOmnitrixGuy](http://that-omnitrix-guy.tumblr.com/), with additional contributions from [TheHawkDown](http://thehawkdown.deviantart.com/).  The initial prototype Unity projects are developed by @Warped2713.
+The OmniSim project was conceived and is designed by [ThatOmnitrixGuy](http://that-omnitrix-guy.tumblr.com/), with additional contributions from [TheHawkDown](http://thehawkdown.deviantart.com/).  The initial prototype Unity projects are developed by [Warped2713](https://github.com/Warped2713/).
 
 ### Support
 Having trouble running OmniSim? Let us know by adding a new issue to our [issue-tracking page](https://github.com/Warped2713/OmniSim/issues).
