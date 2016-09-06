@@ -1,8 +1,8 @@
 # OmniSim
 A simulation of the various devices and alien transformations from the Cartoon Network series, Ben 10. This project is developed by [Warped2713](https://github.com/Warped2713/) for [ThatOmnitrixGuy](http://that-omnitrix-guy.tumblr.com/).
 
-### About
-TBD
+### Website
+Check out the project website at [Warped2713.github.io/OmniSim](https://warped2713.github.io/OmniSim/)
 
 ### Upcoming Features
 Features for Prototype 0.0.0 include:
