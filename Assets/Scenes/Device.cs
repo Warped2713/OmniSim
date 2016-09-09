@@ -1,24 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Device : MonoBehaviour {
-
+public class Device {
 	int id;
-	string name;
+	string deviceName;
 	string series;
 	string description;
 	string defaultPreset;
 	GameObject model;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 	public Device ()
 	{
@@ -39,23 +28,28 @@ public class Device : MonoBehaviour {
 		this.DefaultPreset = defaultPreset;
 		this.model = null;
 	}
-	
 
+	public override string ToString ()
+	{
+		return string.Format ("[Device: DeviceName={0}, Series={1}, Description={2}, DefaultPreset={3}]", DeviceName, Series, Description, DefaultPreset);
+	}
+
+	#region Getters and Setters
 	public int ID {
 		get {
 			return this.id;
 		}
 		set {
-			id = value;
+			this.id = value;
 		}
 	}
 
 	public string DeviceName {
 		get {
-			return this.name;
+			return this.deviceName;
 		}
 		set {
-			name = value.Trim();
+			this.deviceName = value.Trim();
 		}
 	}
 
@@ -64,7 +58,7 @@ public class Device : MonoBehaviour {
 			return this.series;
 		}
 		set {
-			series = value.Trim();
+			this.series = value.Trim();
 		}
 	}
 
@@ -73,7 +67,7 @@ public class Device : MonoBehaviour {
 			return this.description;
 		}
 		set {
-			description = value.Trim();
+			this.description = value.Trim();
 		}
 	}
 
@@ -82,7 +76,8 @@ public class Device : MonoBehaviour {
 			return this.defaultPreset;
 		}
 		set {
-			defaultPreset = value.Trim();
+			this.defaultPreset = value.Trim();
 		}
 	}
+	#endregion
 }

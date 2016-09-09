@@ -1,24 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Alien : MonoBehaviour {
-
+public class Alien {
 	int id;
-	string name;
+	string alienName;
 	string species;
 	string homeworld;
 	string description;
 	GameObject model;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 	public Alien() {
 		this.ID = 0;
@@ -38,7 +27,11 @@ public class Alien : MonoBehaviour {
 		this.Description = description;
 		this.model = null;
 	}
-	
+
+	public override string ToString ()
+	{
+		return string.Format ("[Alien: ID={0}, AlienName={1}, Species={2}, Homeworld={3}, Description={4}]", ID, AlienName, Species, Homeworld, Description);
+	}
 
 	#region Getters and Setters
 	public int ID {
@@ -52,10 +45,10 @@ public class Alien : MonoBehaviour {
 
 	public string AlienName {
 		get {
-			return this.name;
+			return this.alienName;
 		}
 		set {
-			this.name = value.Trim();
+			this.alienName = value.Trim();
 		}
 	}
 
