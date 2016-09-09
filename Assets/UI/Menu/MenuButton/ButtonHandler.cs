@@ -3,6 +3,8 @@ using System.Collections;
 
 public class ButtonHandler : MonoBehaviour {
 
+	public 
+
 	// Use this for initialization
 	void Start () {
 	
