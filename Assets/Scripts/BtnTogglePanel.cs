@@ -1,0 +1,17 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class BtnTogglePanel : MonoBehaviour {
+
+	public void TogglePanel (GameObject panel) {
+		panel.SetActive ( !panel.activeSelf );
+	}
+
+	public void HidePanel (GameObject panel) {
+		panel.SetActive ( false );
+	}
+
+	public void ShowPanel (GameObject panel) {
+		panel.SetActive ( true );
+	}
+}
