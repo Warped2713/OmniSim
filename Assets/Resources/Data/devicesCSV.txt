@@ -1,0 +1,3 @@
+Demo Device | Original Series Nintendo DS | Just two aliens. Models are from the Nintendo DS game in order to demo OmniSim 0.0.0 | Demo Set | DemoDevice1
+Omnitrix | Original Series | The first ten aliens Ben can use from the Original Series | Original 10 | Omnitrix_OS
+Placeholder | None | A placeholder device to test the initialization script | Demo Set | DemoDevice2

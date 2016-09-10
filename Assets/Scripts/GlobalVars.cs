@@ -48,7 +48,8 @@ public class GlobalVars : Singleton<GlobalVars> {
 	}
 
 	private void initializeDeviceData(string file) {
-		string data = System.IO.File.ReadAllText (file);
+		TextAsset temp = Resources.Load (file) as TextAsset;
+		string data = temp.text;
 		string[] rows = data.Split ("\n"[0]);
 		for (int i=0; i<rows.Length; i++) {
 			if ( !string.IsNullOrEmpty(rows[i]) ) {
@@ -67,7 +68,8 @@ public class GlobalVars : Singleton<GlobalVars> {
 	}
 
 	private void initializeAlienData(string file) {
-		string data = System.IO.File.ReadAllText (file);
+		TextAsset temp = Resources.Load (file) as TextAsset;
+		string data = temp.text;
 		string[] rows = data.Split ("\n"[0]);
 		for (int i=0; i<rows.Length; i++) {
 			if ( !string.IsNullOrEmpty(rows[i]) ) {
@@ -86,7 +88,8 @@ public class GlobalVars : Singleton<GlobalVars> {
 	}
 
 	private void initializePresetData(string file) {
-		string data = System.IO.File.ReadAllText (file);
+		TextAsset temp = Resources.Load (file) as TextAsset;
+		string data = temp.text;
 		string[] rows = data.Split ("\n"[0]);
 		for (int i=0; i<rows.Length; i++) {
 			if ( !string.IsNullOrEmpty(rows[i]) ) {
