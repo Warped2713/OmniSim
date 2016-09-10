@@ -16,9 +16,10 @@ public class DeviceViewMain : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		this.timer = 0;
+		this.timer = 100;
 
 		if (GlobalVars.Instance.currentMode == "TimeOut") {
+			GameObject.Find ("CurrentMode").GetComponent<Text> ().text = "Current Mode: Recharging";
 			GameObject.Find ("BtnMode_Reset").GetComponent<Button> ().interactable = true;
 			GameObject.Find ("BtnMode_Activate").GetComponent<Button> ().interactable = false;
 			GameObject.Find ("BtnMode_TimeOut").GetComponent<Button> ().interactable = false;
@@ -26,6 +27,9 @@ public class DeviceViewMain : MonoBehaviour {
 			GameObject.Find ("BtnRight").GetComponent<Button> ().interactable = false;
 			GameObject.Find ("BtnTransform").GetComponent<Button> ().interactable = false;
 		}
+
+		//TODO make this related to the button clicks that change mode text
+		//GlobalVars.Instance.currentMode = "Idle"; 
 
 		this.numAliens = GlobalVars.Instance.getCurrentPreset ().Length;
 
@@ -51,11 +55,16 @@ public class DeviceViewMain : MonoBehaviour {
 
 		// Handle TimeOut Mode
 		if (GlobalVars.Instance.currentMode == "TimeOut") {
-			if (this.timer < 300) {
-				this.timer++;
+			if (this.timer > 0) {
+				this.timer--;
+				GameObject.Find("CurrentMode").GetComponent<Text>().text = "Current Mode: Recharging... " + this.timer.ToString();
 			} else {
-				this.timer = 0;
+				this.timer = 100;
 				GlobalVars.Instance.currentMode = "Idle";
+				GameObject.Find("CurrentMode").GetComponent<Text>().text = "Current Mode: Idle";
+				GameObject.Find ("BtnMode_Reset").GetComponent<Button> ().interactable = false;
+				GameObject.Find ("BtnMode_Activate").GetComponent<Button> ().interactable = true;
+				GameObject.Find ("BtnMode_TimeOut").GetComponent<Button> ().interactable = true;
 			}
 		}
 
@@ -83,5 +92,9 @@ public class DeviceViewMain : MonoBehaviour {
 		GlobalVars.Instance.currentAlien = -1;
 		Text alienName = GameObject.Find("CurrentAlien").GetComponent<Text>();
 		alienName.text = "No Alien Selected";
+	}
+
+	public void SetMode(string mode) {
+		GlobalVars.Instance.currentMode = mode;
 	}
 }
