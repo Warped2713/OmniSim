@@ -7,6 +7,7 @@ public class Device {
 	string series;
 	string description;
 	string defaultPreset;
+	string prefabFilename;
 	GameObject model;
 
 	public Device ()
@@ -17,21 +18,23 @@ public class Device {
 		this.Description = "";
 		this.DefaultPreset = "";
 		this.model = null;
+		this.prefabFilename = "";
 	}
 
-	public Device (int id, string name, string series, string description, string defaultPreset)
+	public Device (int id, string name, string series, string description, string defaultPreset, string prefabFilename, GameObject model)
 	{
 		this.ID = id;
 		this.DeviceName = name;
 		this.Series = series;
 		this.Description = description;
 		this.DefaultPreset = defaultPreset;
-		this.model = null;
+		this.model = model;
+		this.prefabFilename = prefabFilename;
 	}
 
 	public override string ToString ()
 	{
-		return string.Format ("[Device: DeviceName={0}, Series={1}, Description={2}, DefaultPreset={3}]", DeviceName, Series, Description, DefaultPreset);
+		return string.Format ("[Device: DeviceName={0}, Series={1}, Description={2}, DefaultPreset={3}, PrefabFilename={4}]", DeviceName, Series, Description, DefaultPreset, PrefabFilename);
 	}
 
 	#region Getters and Setters
@@ -77,6 +80,22 @@ public class Device {
 		}
 		set {
 			this.defaultPreset = value.Trim();
+		}
+	}
+	public string PrefabFilename {
+		get {
+			return this.prefabFilename;
+		}
+		set {
+			this.prefabFilename = value.Trim();
+		}
+	}
+	public GameObject Model {
+		get {
+			return this.model;
+		}
+		set {
+			this.model = value;
 		}
 	}
 	#endregion

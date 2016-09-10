@@ -4,18 +4,37 @@ using System.Collections.Generic;
 
 public class GlobalVars : Singleton<GlobalVars> {
 
-	public Dictionary<string, Device> devices;
-	public Dictionary<string, Alien> aliens;
-	public Dictionary<string, string[]> alienPresets;
+	public SortedList<string, Device> devices;
+	public SortedList<string, Alien> aliens;
+	public SortedList<string, string[]> alienPresets;
+
+	public int currentDevice;
+	public int currentAlien;
+	public int currentPreset;
 
 
 	public void initializeData(string dfile, string afile, string pfile) {
-		devices = new Dictionary<string, Device> ();
-		aliens = new Dictionary<string, Alien> ();
-		alienPresets = new Dictionary<string, string[]> ();
+		devices = new SortedList<string, Device> ();
+		aliens = new SortedList<string, Alien> ();
+		alienPresets = new SortedList<string, string[]> ();
 		initializeDeviceData (dfile);
 		initializeAlienData (afile);
 		initializePresetData (pfile);
+		currentDevice = 0;
+		currentAlien = 0;
+		currentPreset = 0;
+	}
+
+	public Device getCurrentDevice() {
+		return devices.Values [currentDevice];
+	}
+
+	public Alien getCurrentAlien() {
+		return aliens.Values [currentAlien];
+	}
+
+	public string[] getCurrentPreset() {
+		return alienPresets.Values [currentPreset];
 	}
 
 	private void initializeDeviceData(string file) {
@@ -29,7 +48,8 @@ public class GlobalVars : Singleton<GlobalVars> {
 				d.DeviceName = rowData[0].Trim();
 				d.Series = rowData[1].Trim();
 				d.Description = rowData[2].Trim();
-				d.DefaultPreset = rowData[3].Trim() ;
+				d.DefaultPreset = rowData[3].Trim();
+				d.PrefabFilename = rowData[4].Trim();
 				devices.Add(d.DeviceName, d);
 				//print ( "Device : " + d.ToString() );
 			}
