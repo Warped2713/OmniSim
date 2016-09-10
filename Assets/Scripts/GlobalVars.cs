@@ -11,7 +11,7 @@ public class GlobalVars : Singleton<GlobalVars> {
 	public int currentDevice;
 	public int currentAlien;
 	public string currentPreset;
-
+	public string currentMode;
 
 	public void initializeData(string dfile, string afile, string pfile) {
 		devices = new SortedList<string, Device> ();
@@ -23,6 +23,7 @@ public class GlobalVars : Singleton<GlobalVars> {
 		currentDevice = 0;
 		currentAlien = -1;
 		currentPreset = "None";
+		currentMode = "Idle";
 	}
 
 	public Device getCurrentDevice() {
@@ -77,6 +78,7 @@ public class GlobalVars : Singleton<GlobalVars> {
 				a.Species = rowData [1].Trim ();
 				a.Homeworld = rowData [2].Trim ();
 				a.Description = rowData [3].Trim ();
+				a.PrefabFilename = rowData[4].Trim();
 				aliens.Add(a.AlienName, a);
 				//print ("Alien : " + a.ToString ());
 			}

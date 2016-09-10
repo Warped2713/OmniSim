@@ -10,10 +10,22 @@ public class DeviceViewMain : MonoBehaviour {
 	private Vector3 initDevicePos;
 
 	private int numAliens;
+	private int timer;
 
 	// CAUTION: This code will raise NULL REFERENCE ERROR if the preview does not start on TitleMenu (where GlobalVars gets initialized)
 	// Use this for initialization
 	void Start () {
+		
+		this.timer = 0;
+
+		if (GlobalVars.Instance.currentMode == "TimeOut") {
+			GameObject.Find ("BtnMode_Reset").GetComponent<Button> ().interactable = true;
+			GameObject.Find ("BtnMode_Activate").GetComponent<Button> ().interactable = false;
+			GameObject.Find ("BtnMode_TimeOut").GetComponent<Button> ().interactable = false;
+			GameObject.Find ("BtnLeft").GetComponent<Button> ().interactable = false;
+			GameObject.Find ("BtnRight").GetComponent<Button> ().interactable = false;
+			GameObject.Find ("BtnTransform").GetComponent<Button> ().interactable = false;
+		}
 
 		this.numAliens = GlobalVars.Instance.getCurrentPreset ().Length;
 
@@ -29,10 +41,24 @@ public class DeviceViewMain : MonoBehaviour {
 		// Populate the Presets Tab
 
 		// Populate the Aliens Tab
+
+		// Reset Alien Panel
+		ResetCurrentAlien ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		// Handle TimeOut Mode
+		if (GlobalVars.Instance.currentMode == "TimeOut") {
+			if (this.timer < 300) {
+				this.timer++;
+			} else {
+				this.timer = 0;
+				GlobalVars.Instance.currentMode = "Idle";
+			}
+		}
+
 		// Handle camera zoom for when panels are all collapsed/expanded
 	}
 

@@ -7,6 +7,7 @@ public class Alien {
 	string species;
 	string homeworld;
 	string description;
+	string prefabFilename;
 	GameObject model;
 
 	public Alien() {
@@ -16,21 +17,23 @@ public class Alien {
 		this.Homeworld = "";
 		this.Description = "";
 		this.model = null;
+		this.prefabFilename = "";
 	}
 
-	public Alien (int iD, string name, string species, string homeworld, string description)
+	public Alien (int iD, string name, string species, string homeworld, string description, string prefabFilename, GameObject model)
 	{
 		this.ID = iD;
 		this.AlienName = name;
 		this.Species = species;
 		this.Homeworld = homeworld;
 		this.Description = description;
-		this.model = null;
+		this.model = model;
+		this.prefabFilename = prefabFilename;
 	}
 
 	public override string ToString ()
 	{
-		return string.Format ("[Alien: ID={0}, AlienName={1}, Species={2}, Homeworld={3}, Description={4}]", ID, AlienName, Species, Homeworld, Description);
+		return string.Format ("[Alien: ID={0}, AlienName={1}, Species={2}, Homeworld={3}, Description={4}, PrefabFilename={5}]", ID, AlienName, Species, Homeworld, Description, PrefabFilename);
 	}
 
 	#region Getters and Setters
@@ -76,6 +79,24 @@ public class Alien {
 		}
 		set {
 			this.description = value.Trim();
+		}
+	}
+
+	public string PrefabFilename {
+		get {
+			return this.prefabFilename;
+		}
+		set {
+			this.prefabFilename = value.Trim();
+		}
+	}
+
+	public GameObject Model {
+		get {
+			return this.model;
+		}
+		set {
+			this.model = value;
 		}
 	}
 	#endregion
