@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class DeviceViewMain : MonoBehaviour {
@@ -8,8 +9,13 @@ public class DeviceViewMain : MonoBehaviour {
 	private Device device;
 	private Vector3 initDevicePos;
 
+	private int numAliens;
+
+	// CAUTION: This code will raise NULL REFERENCE ERROR if the preview does not start on TitleMenu (where GlobalVars gets initialized)
 	// Use this for initialization
 	void Start () {
+
+		this.numAliens = GlobalVars.Instance.getCurrentPreset ().Length;
 
 		// Load in the current device
 		this.device = GlobalVars.Instance.getCurrentDevice();
@@ -28,5 +34,28 @@ public class DeviceViewMain : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// Handle camera zoom for when panels are all collapsed/expanded
+	}
+
+	public void ChangeCurrentAlien( int dir ) {
+		//print ( "Old: " + GlobalVars.Instance.currentAlien );
+		GlobalVars.Instance.currentAlien += dir;
+
+		if (GlobalVars.Instance.currentAlien <= -1) {
+			GlobalVars.Instance.currentAlien = this.numAliens - 1;
+		}
+		else if (GlobalVars.Instance.currentAlien >= this.numAliens) {
+			GlobalVars.Instance.currentAlien = 0;
+		}
+		//print ( "+dir: " + GlobalVars.Instance.currentAlien );
+		Text alienName = GameObject.Find("CurrentAlien").GetComponent<Text>();
+		Alien current = GlobalVars.Instance.getCurrentAlien ();
+		alienName.text = current.AlienName;
+
+	}
+
+	public void ResetCurrentAlien() {
+		GlobalVars.Instance.currentAlien = -1;
+		Text alienName = GameObject.Find("CurrentAlien").GetComponent<Text>();
+		alienName.text = "No Alien Selected";
 	}
 }

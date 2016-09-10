@@ -10,7 +10,7 @@ public class GlobalVars : Singleton<GlobalVars> {
 
 	public int currentDevice;
 	public int currentAlien;
-	public int currentPreset;
+	public string currentPreset;
 
 
 	public void initializeData(string dfile, string afile, string pfile) {
@@ -21,8 +21,8 @@ public class GlobalVars : Singleton<GlobalVars> {
 		initializeAlienData (afile);
 		initializePresetData (pfile);
 		currentDevice = 0;
-		currentAlien = 0;
-		currentPreset = 0;
+		currentAlien = -1;
+		currentPreset = "None";
 	}
 
 	public Device getCurrentDevice() {
@@ -30,11 +30,20 @@ public class GlobalVars : Singleton<GlobalVars> {
 	}
 
 	public Alien getCurrentAlien() {
-		return aliens.Values [currentAlien];
+		string nameKey = getCurrentPreset () [currentAlien];
+		//print ( "A key: " + nameKey );
+		return aliens [nameKey.Trim()];
 	}
 
 	public string[] getCurrentPreset() {
-		return alienPresets.Values [currentPreset];
+		if (currentPreset == "None") {
+			string presetKey = getCurrentDevice ().DefaultPreset;
+			//print ( "P key: " + presetKey );
+			return alienPresets[presetKey];
+		} else {
+			//print ( "Current P key: " + currentPreset );
+			return alienPresets[currentPreset];
+		}
 	}
 
 	private void initializeDeviceData(string file) {

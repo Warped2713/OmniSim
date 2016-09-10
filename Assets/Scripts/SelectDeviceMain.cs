@@ -12,9 +12,13 @@ public class SelectDeviceMain : MonoBehaviour {
 	private float theta = 0;
 	private Vector3 campos;
 
-	// CAUTION: This code will raise errors if the preview does not start on TitleMenu (where GlobalVars gets initialized)
+	// CAUTION: This code will raise NULL REFERENCE ERROR if the preview does not start on TitleMenu (where GlobalVars gets initialized)
 	// Use this for initialization
 	void Start () {
+
+		GlobalVars.Instance.currentDevice = 0;
+		GlobalVars.Instance.currentAlien = -1;
+		GlobalVars.Instance.currentPreset = "None";
 
 		// Initialize numDevices from GlobalVars
 		this.numDevices = GlobalVars.Instance.devices.Count;
@@ -71,7 +75,7 @@ public class SelectDeviceMain : MonoBehaviour {
 			device.Model.transform.RotateAround( centerPoint, axis, Mathf.Rad2Deg * this.theta * dir);
 		}
 		// Update current device index
-		print ("Old: " + GlobalVars.Instance.currentDevice.ToString() );
+		//print ("Old: " + GlobalVars.Instance.currentDevice.ToString() );
 		GlobalVars.Instance.currentDevice += dir;
 		if (GlobalVars.Instance.currentDevice == -1) {
 			GlobalVars.Instance.currentDevice = this.numDevices - 1;
@@ -79,7 +83,7 @@ public class SelectDeviceMain : MonoBehaviour {
 		else if (GlobalVars.Instance.currentDevice == this.numDevices) {
 			GlobalVars.Instance.currentDevice = 0;
 		}
-		print ("+ Dir " + dir.ToString() + " : " + GlobalVars.Instance.currentDevice.ToString() );
+		//print ("+ Dir " + dir.ToString() + " : " + GlobalVars.Instance.currentDevice.ToString() );
 		UpdateDeviceTexts ();
 	}
 
