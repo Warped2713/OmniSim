@@ -42,6 +42,9 @@ public class DeviceViewMain : MonoBehaviour {
 		Vector3 campos = GameObject.FindGameObjectWithTag("MainCamera").transform.position;
 		this.device.Model.transform.position = this.initDevicePos = new Vector3( campos.x, device.Model.transform.localScale.y / 2 - campos.y, campos.z + this.distanceToCamera );
 
+		// Set rotation
+		this.device.Model.GetComponent<DeviceExtra> ().resetToViewRotation();
+
 		// Populate the Presets Tab
 
 		// Populate the Aliens Tab

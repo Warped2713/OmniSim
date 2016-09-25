@@ -16,10 +16,6 @@ public class SelectDeviceMain : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		GlobalVars.Instance.currentDevice = 0;
-		GlobalVars.Instance.currentAlien = -1;
-		GlobalVars.Instance.currentPreset = "None";
-
 		// Initialize numDevices from GlobalVars
 		this.numDevices = GlobalVars.Instance.devices.Count;
 
@@ -54,10 +50,23 @@ public class SelectDeviceMain : MonoBehaviour {
 
 			device.Model.transform.position = pos;
 			//print (pos.ToString () + "; " + i.ToString() );
+
+			// Rotate the object so that it faces outwards from the center of the device ring
+			Vector3 axis = new Vector3 (0f, 1f, 0f);
+			device.Model.transform.RotateAround( device.Model.transform.position, axis, i * -360 / this.numDevices);
 		}
 		#endregion
 
 		UpdateDeviceTexts ();
+
+		// Load the current device as the frontmost option in the ring (if the currentDevice is already set)
+		if (GlobalVars.Instance.currentDevice > 0) {
+			PreRotateDeviceRing ( GlobalVars.Instance.currentDevice );
+		} else {
+			GlobalVars.Instance.currentDevice = 0;
+			GlobalVars.Instance.currentAlien = -1;
+			GlobalVars.Instance.currentPreset = "None";
+		}
 	}
 	
 	// Update is called once per frame
@@ -65,7 +74,7 @@ public class SelectDeviceMain : MonoBehaviour {
 
 	}
 
-	public void RotateDeviceRing( int dir ) {
+	public void PreRotateDeviceRing( int dir ) {
 		foreach( KeyValuePair<string, Device> kvpDevice in GlobalVars.Instance.devices ) {
 			Device device = kvpDevice.Value;
 
@@ -74,6 +83,11 @@ public class SelectDeviceMain : MonoBehaviour {
 
 			device.Model.transform.RotateAround( centerPoint, axis, Mathf.Rad2Deg * this.theta * dir);
 		}
+	}
+
+	public void RotateDeviceRing( int dir ) {
+		PreRotateDeviceRing( dir );
+
 		// Update current device index
 		//print ("Old: " + GlobalVars.Instance.currentDevice.ToString() );
 		GlobalVars.Instance.currentDevice += dir;
