@@ -42,11 +42,11 @@ public class SelectDeviceMain : MonoBehaviour {
 
 			Vector3 pos = new Vector3 (0f, 0f, 0f);
 			// X component around the XZ plane circle
-			pos.x = 0 + this.menuRadius * Mathf.Cos( i * this.theta + angleAdj);
+			pos.x = device.Model.transform.position.x + 0 + this.menuRadius * Mathf.Cos( i * this.theta + angleAdj);
 			// Center the device on the y axis in front of camera
-			pos.y = device.Model.transform.localScale.y / 2 + this.campos.y;
+			pos.y = device.Model.transform.position.y + device.Model.transform.localScale.y / 2 + this.campos.y;
 			// Z component around the XZ plane circle
-			pos.z = (this.startDistance + this.menuRadius) + this.menuRadius * Mathf.Sin( i * this.theta + angleAdj);
+			pos.z = device.Model.transform.position.z + (this.startDistance + this.menuRadius) + this.menuRadius * Mathf.Sin( i * this.theta + angleAdj);
 
 			device.Model.transform.position = pos;
 			//print (pos.ToString () + "; " + i.ToString() );
