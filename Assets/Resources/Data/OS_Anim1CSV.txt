@@ -1,0 +1,12 @@
+W : 198
+H : 198
+PadX : 1
+PadY : 1
+BBoxL : 220
+BBoxR : 1018
+BBoxT : 0
+BBoxB : 798
+Activate : 0, 1, 2, 3, 4, 6
+Recharge : 5
+Roster : 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+Preset : Original 10
