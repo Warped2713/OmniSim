@@ -60,6 +60,14 @@ public class DeviceViewMain : MonoBehaviour {
 		if ( this.device.Model.GetComponent<DeviceAnim>() ) {
 			this.animScript = this.device.Model.GetComponent<DeviceAnim>();
 			animScript.setColorScheme(1);
+
+			// Populate Colors Tab
+			GameObject btnA = GameObject.Find("Canvas/CustomizePanel/Tab_ChangeColor/Btn_Color_A");
+			btnA.GetComponent<Button>().onClick.AddListener ( delegate { animScript.setColorScheme (1); } );
+			GameObject btnB = GameObject.Find("Canvas/CustomizePanel/Tab_ChangeColor/Btn_Color_B");
+			btnB.GetComponent<Button>().onClick.AddListener ( delegate { animScript.setColorScheme (6); } );
+			GameObject btnC = GameObject.Find("Canvas/CustomizePanel/Tab_ChangeColor/Btn_Color_C");
+			btnC.GetComponent<Button>().onClick.AddListener ( delegate { animScript.setColorScheme (9); } );
 		}
 
 		// Populate the Presets Tab

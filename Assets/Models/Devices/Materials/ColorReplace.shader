@@ -34,7 +34,7 @@
 			// Albedo comes from a texture tinted by color
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex); //* _Color;
 
-			fixed4 swapCol = tex2D(_SwapTex, float2(c.r, _SwapIndex));
+			fixed4 swapCol = tex2D(_SwapTex, float2(c.r, _SwapIndex)); //* _Color;
 			fixed4 c2 = lerp(c, swapCol, swapCol.a) * _Color;
 			c2.a = c.a;
 
