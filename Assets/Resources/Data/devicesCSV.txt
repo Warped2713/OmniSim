@@ -1,4 +1,4 @@
-Omnitrix | Original Series | The first ten aliens Ben can use from the Original Series | Original 10 | Omnitrix_OS
+Omnitrix | Original Series | The first ten aliens Ben can use from the Original Series | Original 10 | Omnitrix_OS_Anim
 Placeholder 1 | None | A placeholder device to test the initialization script | Demo Set | DemoDevice2
 Placeholder 2 | None | A placeholder device to test the initialization script | Demo Set | DemoDevice2
 Placeholder 3 | None | A placeholder device to test the initialization script | Demo Set | DemoDevice2

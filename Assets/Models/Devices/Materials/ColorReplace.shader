@@ -5,7 +5,7 @@
 		_SwapTex ("Color Data", 2D) = "transparent" {}
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
 		_Metallic ("Metallic", Range(0,1)) = 0.0
-		_SwapIndex ("Color Scheme Row ID", int) = 1
+		_SwapIndex ("Color Scheme Row ID", Range(0,1)) = 0.875
 	}
 	SubShader {
 		Tags { "RenderType"="Opaque" }
@@ -20,7 +20,7 @@
 
 		sampler2D _MainTex;
 		sampler2D _SwapTex;
-		int _SwapIndex;
+		float _SwapIndex;
 
 		struct Input {
 			float2 uv_MainTex;
@@ -34,9 +34,8 @@
 			// Albedo comes from a texture tinted by color
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex); //* _Color;
 
-			fixed4 swapCol = tex2D(_SwapTex, float2(c.r + 64, 40));
-			//fixed4 c2 = lerp(c, swapCol, swapCol.a) * _Color;
-			fixed4 c2 = swapCol; //* _Color;
+			fixed4 swapCol = tex2D(_SwapTex, float2(c.r, _SwapIndex));
+			fixed4 c2 = lerp(c, swapCol, swapCol.a) * _Color;
 			c2.a = c.a;
 
 			o.Albedo = c2.rgb;
