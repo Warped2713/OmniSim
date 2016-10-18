@@ -12,6 +12,9 @@ public class DeviceViewMain : MonoBehaviour {
 	private int numAliens;
 	private int timer;
 
+	private DeviceAnim animScript;
+	private DeviceExtra extraScript;
+
 	// CAUTION: This code will raise NULL REFERENCE ERROR if the preview does not start on TitleMenu (where GlobalVars gets initialized)
 	// Use this for initialization
 	void Start () {
@@ -35,15 +38,29 @@ public class DeviceViewMain : MonoBehaviour {
 
 		// Load in the current device
 		this.device = GlobalVars.Instance.getCurrentDevice();
-		string prefabFilepath = "Prefabs/Devices/" + this.device.PrefabFilename;
-		this.device.Model = Instantiate (Resources.Load(prefabFilepath, typeof(GameObject))) as GameObject;
+		string prefabFilepath = "Prefabs/Devices/Colorized/" + this.device.PrefabFilename;
+		Object dmod = Resources.Load(prefabFilepath, typeof(GameObject));
+		if ( !dmod ) {
+			prefabFilepath = "Prefabs/Devices/" + this.device.PrefabFilename;
+			dmod = Resources.Load(prefabFilepath, typeof(GameObject));
+		}
+		this.device.Model = Instantiate (dmod) as GameObject;
 
 		// Set the position of model to distanceToCamera from camera position and centered on XY plane
 		Vector3 campos = GameObject.FindGameObjectWithTag("MainCamera").transform.position;
 		this.device.Model.transform.position = this.initDevicePos = new Vector3( campos.x, device.Model.transform.localScale.y / 2 - campos.y, campos.z + this.distanceToCamera );
 
 		// Set rotation
-		this.device.Model.GetComponent<DeviceExtra> ().resetToViewRotation();
+		if ( this.device.Model.GetComponent<DeviceExtra>() ) {
+			this.extraScript = this.device.Model.GetComponent<DeviceExtra>();
+			extraScript.resetToViewRotation ();
+		}
+
+		// Set color scheme
+		if ( this.device.Model.GetComponent<DeviceAnim>() ) {
+			this.animScript = this.device.Model.GetComponent<DeviceAnim>();
+			animScript.setColorScheme(1);
+		}
 
 		// Populate the Presets Tab
 
@@ -88,6 +105,7 @@ public class DeviceViewMain : MonoBehaviour {
 		Text alienName = GameObject.Find("CurrentAlien").GetComponent<Text>();
 		Alien current = GlobalVars.Instance.getCurrentAlien ();
 		alienName.text = current.AlienName;
+		if (animScript) animScript.setFaceplateAlienTex (current.ID);
 
 	}
 
@@ -95,6 +113,7 @@ public class DeviceViewMain : MonoBehaviour {
 		GlobalVars.Instance.currentAlien = -1;
 		Text alienName = GameObject.Find("CurrentAlien").GetComponent<Text>();
 		alienName.text = "No Alien Selected";
+		if (animScript) animScript.resetFaceplate ();
 	}
 
 	public void SetMode(string mode) {

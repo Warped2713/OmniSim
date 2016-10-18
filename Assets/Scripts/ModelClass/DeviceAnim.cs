@@ -20,13 +20,14 @@ public class DeviceAnim : MonoBehaviour {
 	public GameObject core;
 	public GameObject dial;
 	public GameObject lights;
+	public GameObject faceplate;
+	public GameObject tube;
 
 	enum AnimMode { Idle, AnimActivate, Activated, AnimDeactivate, Deactivated, AnimRecharge, Recharged };
 	AnimMode mode = AnimMode.Idle;
 
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
@@ -59,15 +60,15 @@ public class DeviceAnim : MonoBehaviour {
 	}
 
 	void setTexActivate() {
-		core.GetComponent<Material> ().mainTexture = initialTex;
-		dial.GetComponent<Material> ().mainTexture = initialTex;
-		lights.GetComponent<Material> ().mainTexture = initialTex;
+		core.GetComponent<MeshRenderer> ().material.mainTexture = initialTex;
+		dial.GetComponent<MeshRenderer> ().material.mainTexture = initialTex;
+		lights.GetComponent<MeshRenderer> ().material.mainTexture = initialTex;
 	}
 
 	void setTexDeactivate() {
-		core.GetComponent<Material> ().mainTexture = animTex;
-		dial.GetComponent<Material> ().mainTexture = animTex;
-		lights.GetComponent<Material> ().mainTexture = animTex;
+		core.GetComponent<MeshRenderer> ().material.mainTexture = animTex;
+		dial.GetComponent<MeshRenderer> ().material.mainTexture = animTex;
+		lights.GetComponent<MeshRenderer> ().material.mainTexture = animTex;
 	}
 
 	public void AnimActivate() {
@@ -80,5 +81,21 @@ public class DeviceAnim : MonoBehaviour {
 
 	public void AnimRecharge() {
 		mode = AnimMode.AnimRecharge;
+	}
+
+	public void setFaceplateAlienTex(int i) {
+		Vector2 uv = new Vector2 ();
+		uv.x = (float)((i + 6) % 4) * 0.25f;
+		uv.y = 1.0f - (float)((i + 6) / 4 + 1) * 0.25f;
+		faceplate.GetComponent<MeshRenderer> ().material.mainTextureOffset = uv;
+	}
+
+	public void resetFaceplate() {
+		faceplate.GetComponent<MeshRenderer> ().material.mainTextureOffset = new Vector2 (0f, 0.75f);
+	}
+
+	public void setColorScheme(int i) {
+		faceplate.GetComponent<MeshRenderer>().material.SetFloat("_SwapIndex", 1.0f - ( (2.0f + (float)i * 5.0f) / 105.0f ) );
+		core.GetComponent<MeshRenderer>().sharedMaterial.SetFloat("_SwapIndex", 1.0f - ( (2.0f + (float)i * 5.0f) / 105.0f ) );
 	}
 }
