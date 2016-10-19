@@ -68,6 +68,7 @@ public class DeviceViewMain : MonoBehaviour {
 			btnB.GetComponent<Button>().onClick.AddListener ( delegate { animScript.setColorScheme (6); } );
 			GameObject btnC = GameObject.Find("Canvas/CustomizePanel/Tab_ChangeColor/Btn_Color_C");
 			btnC.GetComponent<Button>().onClick.AddListener ( delegate { animScript.setColorScheme (9); } );
+			btnC.GetComponent<Sprite>().
 		}
 
 		// Populate the Presets Tab

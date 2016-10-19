@@ -1,22 +1,21 @@
-Omnitrix_OS | OS_ColorScheme | Debug | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Classic Time Out | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Classic | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Gwen | OS_OMNITRIX_GWEN_COLOR_Base 
-Omnitrix_OS | OS_ColorScheme | Alternate 1 | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Alternate 2 | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Alternate 3 | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Albedo | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Alternate 5 | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Alternate 6 | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Mad Ben / Power Watch | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Alternate 8 | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Alternate 9 | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Alternate 10 | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Alternate 11 | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Alternate 12 | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Alternate 13 | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Alternate 14 | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Alternate 15 | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Alternate 16 | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Alternate 17 | OS_OMNITRIX_Base 
-Omnitrix_OS | OS_ColorScheme | Alternate 18 | OS_OMNITRIX_Base 
+0 | Default | OS_OMNITRIX_Base 
+1 | Ben Tennyson (Original Series) | OS_OMNITRIX_Base 
+2 | Ben Tennyson (Alien Force/Ultimate Alien) | OS_OMNITRIX_Base 
+3 | Ben Tennyson (Omniverse) | OS_OMNITRIX_Base 
+4 | Gwen Tennyson | OS_OMNITRIX_GWEN_COLOR_Base 
+5 | Ben 23 | OS_OMNITRIX_Base 
+6 | Albedo | OS_OMNITRIX_Base 
+7 | Bad Ben | OS_OMNITRIX_Base 
+9 | Mad Ben | OS_OMNITRIX_Base 
+8 | Nega Ben | OS_OMNITRIX_Base 
+10 | Benzarro | OS_OMNITRIX_Base 
+11 | Eon | OS_OMNITRIX_Base 
+14 | Vilgax | OS_OMNITRIX_Base 
+12 | Max Tennyson | OS_OMNITRIX_Base 
+17 | Ken Tennyson | OS_OMNITRIX_Base 
+13 | Kevin Levin | OS_OMNITRIX_Base 
+19 | Rook Blonko | OS_OMNITRIX_Base 
+18 | Argit | OS_OMNITRIX_Base 
+16 | Rex Salazar | OS_OMNITRIX_Base 
+15 | Zak Saturday | OS_OMNITRIX_Base 
+20 | Ben Tennyson (Concept Art) Steven E. Gordon | OS_OMNITRIX_Base 
