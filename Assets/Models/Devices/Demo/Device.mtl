@@ -1,7 +1,7 @@
 # Blender MTL File: 'None'
 # Material Count: 1
 
-newmtl ConeDefault
+newmtl defaultMat
 Ns 96.078431
 Ka 0.000000 0.000000 0.000000
 Kd 0.690196 0.690196 0.690196

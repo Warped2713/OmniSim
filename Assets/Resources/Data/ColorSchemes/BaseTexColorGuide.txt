@@ -1,0 +1,6 @@
+35,25,45    Inset Wristband
+40,200,0    Lights, Hourglass
+45,60,100   Base
+50,50,50    Arrows
+55,180,150  Tubes
+60,100,120  Dial, Band
