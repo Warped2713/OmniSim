@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BtnTogglePanel : MonoBehaviour {
+public class MenuManager : MonoBehaviour {
 
 	public void TogglePanel (GameObject panel) {
 		panel.SetActive ( !panel.activeSelf );
@@ -14,4 +14,5 @@ public class BtnTogglePanel : MonoBehaviour {
 	public void ShowPanel (GameObject panel) {
 		panel.SetActive ( true );
 	}
+
 }
