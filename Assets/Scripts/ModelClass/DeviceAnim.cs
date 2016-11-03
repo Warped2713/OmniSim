@@ -97,5 +97,6 @@ public class DeviceAnim : MonoBehaviour {
 	public void setColorScheme(int i) {
 		faceplate.GetComponent<MeshRenderer>().material.SetFloat("_SwapIndex", 1.0f - ( (2.0f + (float)i * 5.0f) / 105.0f ) );
 		core.GetComponent<MeshRenderer>().sharedMaterial.SetFloat("_SwapIndex", 1.0f - ( (2.0f + (float)i * 5.0f) / 105.0f ) );
+		//print ("set colors to " + i.ToString());
 	}
 }
