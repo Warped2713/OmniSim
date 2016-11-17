@@ -87,16 +87,16 @@ public class DeviceViewMain : MonoBehaviour {
 			btnF.GetComponentInChildren<MeshRenderer> ().material.mainTextureOffset = new Vector2 (0.2f, 0.6f);
 
 			GameObject btnG = GameObject.Find("Canvas/CustomizePanel/Tab_ChangeColor/Btn_Color_G");
-			btnG.GetComponent<Button>().onClick.AddListener ( delegate { animScript.setColorScheme (7); } );
-			btnG.GetComponentInChildren<MeshRenderer> ().material.mainTextureOffset = new Vector2 (0.4f, 0.6f);
+			btnG.GetComponent<Button>().onClick.AddListener ( delegate { animScript.setColorScheme (11); } );
+			btnG.GetComponentInChildren<MeshRenderer> ().material.mainTextureOffset = new Vector2 (0.2f, 0.4f);
 
 			GameObject btnH = GameObject.Find("Canvas/CustomizePanel/Tab_ChangeColor/Btn_Color_H");
-			btnH.GetComponent<Button>().onClick.AddListener ( delegate { animScript.setColorScheme (8); } );
-			btnH.GetComponentInChildren<MeshRenderer> ().material.mainTextureOffset = new Vector2 (0.6f, 0.6f);
+			btnH.GetComponent<Button>().onClick.AddListener ( delegate { animScript.setColorScheme (14); } );
+			btnH.GetComponentInChildren<MeshRenderer> ().material.mainTextureOffset = new Vector2 (0.8f, 0.4f);
 
 			GameObject btnI = GameObject.Find("Canvas/CustomizePanel/Tab_ChangeColor/Btn_Color_I");
-			btnI.GetComponent<Button>().onClick.AddListener ( delegate { animScript.setColorScheme (9); } );
-			btnI.GetComponentInChildren<MeshRenderer> ().material.mainTextureOffset = new Vector2 (0.8f, 0.6f);
+			btnI.GetComponent<Button>().onClick.AddListener ( delegate { animScript.setColorScheme (20); } );
+			btnI.GetComponentInChildren<MeshRenderer> ().material.mainTextureOffset = new Vector2 (0.0f, 0.0f);
 		}
 
 		// Populate the Presets Tab
