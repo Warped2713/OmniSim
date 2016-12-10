@@ -2,6 +2,7 @@
     Properties {
         _MainTex ("Base (RGB)", 2D) = "white" {}
         _SwapTex ("Color Data", 2D) = "transparent" {}
+        _OverTex ("Outline Data", 2D) = "transparent" {}
         _DispTex ("Disp Texture", 2D) = "gray" {}
         _NormalMap ("Normalmap", 2D) = "bump" {}
         _Displacement ("Displacement", Range(0, 1.0)) = 0.3
@@ -38,6 +39,7 @@
         };
 
         sampler2D _MainTex;
+        sampler2D _OverTex;
         sampler2D _NormalMap;
         fixed4 _Color;
 
@@ -49,7 +51,12 @@
 
             fixed4 c2 = tex2D(_SwapTex, float2(c.r, _SwapIndex));// * _Color;
 			//fixed4 c2 = lerp(c, swapCol, swapCol.a) * _Color;
-			c2.a = c.a;
+			//c2.a = c.a;
+
+			fixed4 c3 = tex2D (_OverTex, IN.uv_MainTex);
+			c2.r = c2.r * (1 - c3.a) + c3.r;
+			c2.g = c2.g * (1 - c3.a) + c3.g;
+			c2.b = c2.b * (1 - c3.a) + c3.b;
 
             o.Albedo = c2.rgb;
             o.Specular = 0.2;
