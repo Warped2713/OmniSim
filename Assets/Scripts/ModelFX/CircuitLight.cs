@@ -6,14 +6,20 @@ public class CircuitLight : MonoBehaviour {
 	Vector3 startPos;
 	Vector3 endPos;
 
+	Vector3 diffPos;
+
 	// Use this for initialization
 	void Start () {
+		diffPos = Vector3.zero;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		diffPos = transform.position - endPos;
+
 		// If target is reached
-		if (transform.position - endPos > Vector3.zero) {
+		if (diffPos.magnitude > 0.0f) {
 			// Reset position
 			transform.position = startPos;
 			// TODO: Turn light off
