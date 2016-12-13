@@ -42,5 +42,6 @@ public class AudioVis : MonoBehaviour {
 			avg /= count;
 			freqBand [i] = avg;
 		}
+		//freqBand[5] += freqBand [4] + freqBand [6] + freqBand [7];
 	}
 }
