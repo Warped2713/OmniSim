@@ -1,6 +1,6 @@
 Heatblast | Pyronite | Pyros | desc | Placeholder
 Wildmutt | Vulpimancer | Vulpin | desc | Placeholder
-Diamondhead | Petrosapien | Petropia | desc | Placeholder
+Diamondhead | Petrosapien | Petropia | desc | OS_DiamondHead
 XLR8 | Kineceleran | Kinet | desc | OS_XLR8
 Grey Matter | Galvan | Galvan Prime | desc | Placeholder
 Four Arms | Tetramand | Khoros | desc | OS_FourArms
