@@ -2,9 +2,9 @@ Heatblast | Pyronite | Pyros | Lorem ipsum dolor sit amet, consectetur adipiscin
 Wildmutt | Vulpimancer | Vulpin | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean velit est, suscipit vel vehicula sit amet, aliquet eu purus. Mauris fringilla orci justo. Suspendisse condimentum ante id pulvinar faucibus. | Placeholder
 Diamondhead | Petrosapien | Petropia | Model made specifically for OmniSim by SpacePirateEyepatch on Tumblr | OS_DiamondHead
 XLR8 | Kineceleran | Kinet | Model taken from official game as a placeholder | OS_XLR8
-Grey Matter | Galvan | Galvan Prime | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean velit est, suscipit vel vehicula sit amet, aliquet eu purus. Mauris fringilla orci justo. Suspendisse condimentum ante id pulvinar faucibus. | OS_GreyMatter
+Grey Matter | Galvan | Galvan Prime | Model made specifically for OmniSim by SpacePirateEyepatch on Tumblr | OS_GreyMatter
 Four Arms | Tetramand | Khoros | Model taken from official game as a placeholder | OS_FourArms
 Stinkfly | Lepidopterran | Lepidopterra | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean velit est, suscipit vel vehicula sit amet, aliquet eu purus. Mauris fringilla orci justo. Suspendisse condimentum ante id pulvinar faucibus. | Placeholder
 Ripjaws | Piscciss Volann | Piscciss | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean velit est, suscipit vel vehicula sit amet, aliquet eu purus. Mauris fringilla orci justo. Suspendisse condimentum ante id pulvinar faucibus. | Placeholder
 Upgrade | Galvanic Mechamorph | Galvan B | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean velit est, suscipit vel vehicula sit amet, aliquet eu purus. Mauris fringilla orci justo. Suspendisse condimentum ante id pulvinar faucibus. | Placeholder
-Ghostfreak | Ectonurite | Anur Phaetos | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean velit est, suscipit vel vehicula sit amet, aliquet eu purus. Mauris fringilla orci justo. Suspendisse condimentum ante id pulvinar faucibus. | Placeholder
+Ghostfreak | Ectonurite | Anur Phaetos | Model made specifically for OmniSim by SpacePirateEyepatch on Tumblr | OS_GhostFreak
