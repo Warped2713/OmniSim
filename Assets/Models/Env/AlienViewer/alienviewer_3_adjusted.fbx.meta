@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e4e477925309a7444b574ccbae0a6b9f
-timeCreated: 1488082866
+guid: a5189579d5bec7b45af2080f54120867
+timeCreated: 1488778985
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -15,8 +15,8 @@ ModelImporter:
     2300002: Floor
     3300000: Arena
     3300002: Floor
-    4300000: Arena
-    4300002: Floor
+    4300000: Floor
+    4300002: Arena
   materials:
     importMaterials: 1
     materialName: 0
@@ -63,6 +63,7 @@ ModelImporter:
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -73,7 +74,10 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
   humanoidOversampling: 1
