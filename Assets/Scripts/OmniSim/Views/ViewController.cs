@@ -9,8 +9,11 @@ namespace OmniSim.Views {
 		
 		public OmniSim.Game.Scenes sceneType;
 		public string BGM_Name;
+		public bool hasSoloBGM = false;
+		public bool restartBGM = false;
 
 		private OmniSim.Game game;
+		private bool wasLoadedBefore = false;
 
 		// Use this for initialization
 		void Start () {
@@ -37,6 +40,13 @@ namespace OmniSim.Views {
 		public void onLoadScene(OmniSim.Game game)
 		{
 			this.game = game;
+			if (this.wasLoadedBefore) {
+				this.onReloadScene();
+
+			} else {
+				this.onInitScene();
+			}
+			this.game.audioManager.PlayAudio (this.BGM_Name, this.hasSoloBGM, this.restartBGM);
 		}
 
 		// When unloaded, save state

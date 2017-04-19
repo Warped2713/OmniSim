@@ -30,12 +30,14 @@ namespace OmniSim {
 		}
 
 		private void DetectLoad(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode) {
-			System.Console.Write ("finished loading");
-			//scene.GetRootGameObjects () [0].GetComponent<Views.ViewController> ().onLoadScene (this.game);
+			Debug.Log("finished loading");
+			if (scene.buildIndex != (int)Game.Scenes.Master) {
+				scene.GetRootGameObjects () [0].GetComponent<Views.ViewController> ().onLoadScene (this.game);
+			}
 		}
 
 		private void DetectUnload(UnityEngine.SceneManagement.Scene scene) {
-			System.Console.Write ("finished unloading");
+			Debug.Log ("finished unloading");
 		}
 
 		public void Load( int sceneID )
@@ -43,7 +45,7 @@ namespace OmniSim {
 			UnityEngine.SceneManagement.Scene scene = UnityEngine.SceneManagement.SceneManager.GetSceneByBuildIndex (sceneID);
 
 			if (!scene.IsValid() || !scene.isLoaded ) {
-				System.Console.Write ("preparing to load");
+				Debug.Log ("preparing to load");
 				UnityEngine.SceneManagement.SceneManager.LoadScene (sceneID, UnityEngine.SceneManagement.LoadSceneMode.Additive);
 			}
 		}
