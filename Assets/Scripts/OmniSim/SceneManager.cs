@@ -18,8 +18,6 @@ namespace OmniSim {
 			Instance = this;
 
 			// Set delegates to be notified of load/unload changes
-			//this.loadedSceneDelegate = this.DetectLoad;
-			//this.unloadedSceneDelegate = this.DetectUnload;
 			UnityEngine.SceneManagement.SceneManager.sceneUnloaded += DetectUnload;
 			UnityEngine.SceneManagement.SceneManager.sceneLoaded += DetectLoad;
 		}
@@ -30,14 +28,14 @@ namespace OmniSim {
 		}
 
 		private void DetectLoad(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode) {
-			Debug.Log("finished loading");
+			Debug.Log("finished loading " + scene.name);
 			if (scene.buildIndex != (int)Game.Scenes.Master) {
 				scene.GetRootGameObjects () [0].GetComponent<Views.ViewController> ().onLoadScene (this.game);
 			}
 		}
 
 		private void DetectUnload(UnityEngine.SceneManagement.Scene scene) {
-			Debug.Log ("finished unloading");
+			Debug.Log ("finished unloading " + scene.name);
 		}
 
 		public void Load( int sceneID )

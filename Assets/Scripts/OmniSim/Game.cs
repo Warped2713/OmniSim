@@ -8,9 +8,6 @@ namespace OmniSim {
 
 		public static Game Instance{ set; get; }
 
-		//public GameObject sceneManagerObj;
-		//public GameObject audioManagerObj;
-
 		public OmniSim.SceneManager sceneManager;
 		public OmniSim.AudioManager audioManager;
 
@@ -25,10 +22,7 @@ namespace OmniSim {
 			AlienView  		// 5 
 		};
 
-		//public string[] viewScenes = new string[6];
-
 		public Scenes currentSceneType;
-		public Views.ViewController currentScene;
 
 		// On first load
 		void Awake() {
@@ -38,8 +32,6 @@ namespace OmniSim {
 
 			// Initialize managers
 			this.sceneManager.setGame(this);
-			//this.sceneManager = this.sceneManagerObj.GetComponent<OmniSim.SceneManager>();
-			//this.audioManager = this.audioManagerObj.GetComponent<OmniSim.AudioManager>();
 
 
 		}
@@ -48,10 +40,6 @@ namespace OmniSim {
 		void Start () {			
 			// Load initial scene
 			sceneManager.Load ( (int)this.currentSceneType );
-			// Set current scene
-			//this.currentScene = this.sceneManager.GetScene( (int)this.currentSceneType );
-			// Start up scene stuff
-			//this.currentScene.onInitScene ();
 		}
 		
 		// Update is called once per frame
