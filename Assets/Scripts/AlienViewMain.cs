@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 
+using OmniSim.Models;
+
 public class AlienViewMain : MonoBehaviour {
 
 	public float positionX;

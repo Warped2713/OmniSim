@@ -12,7 +12,7 @@ namespace OmniSim.Views {
 		public bool hasSoloBGM = false;
 		public bool restartBGM = false;
 
-		private OmniSim.Game game;
+		protected OmniSim.Game game;
 		private bool wasLoadedBefore = false;
 
 		// Use this for initialization
@@ -26,18 +26,18 @@ namespace OmniSim.Views {
 		}
 
 		// When loaded for the first time, initialize state
-		public void onInitScene()
+		public virtual  void onInitScene()
 		{
 			
 		}
 
 		// When reloaded, initialize to the previously saved state
-		public void onReloadScene()
+		public virtual void onReloadScene()
 		{
 
 		}
 
-		public void onLoadScene(OmniSim.Game game)
+		public virtual void onLoadScene(OmniSim.Game game)
 		{
 			this.game = game;
 			if (this.wasLoadedBefore) {
@@ -50,7 +50,7 @@ namespace OmniSim.Views {
 		}
 
 		// When unloaded, save state
-		public void onUnloadScene()
+		public virtual void onUnloadScene()
 		{
 			
 		}

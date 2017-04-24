@@ -24,15 +24,21 @@ namespace OmniSim {
 
 		public Scenes currentSceneType;
 
+		// Game Data (formerly from a GlobalVars singleton)
+		public string deviceCSV;
+		public string alienCSV;
+		public string presetCSV;
+		private OmniSim.GameData data;
+
 		// On first load
 		void Awake() {
 			Instance = this;
 
 			// Initialize data
+			this.data = new OmniSim.GameData( deviceCSV, alienCSV, presetCSV );
 
 			// Initialize managers
 			this.sceneManager.setGame(this);
-
 
 		}
 
@@ -45,6 +51,10 @@ namespace OmniSim {
 		// Update is called once per frame
 		void Update () {
 			
+		}
+
+		public OmniSim.GameData getData() {
+			return this.data;
 		}
 	}
 

@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
+using OmniSim.Models;
+
 public class SelectDeviceMain : MonoBehaviour {
 
 	public int startDistance = 50;

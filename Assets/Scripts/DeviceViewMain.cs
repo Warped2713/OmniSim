@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using OmniSim.Models;
+using OmniSim.Behaviors;
 
 public class DeviceViewMain : MonoBehaviour {
 
