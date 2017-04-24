@@ -13,8 +13,8 @@ namespace OmniSim.Views {
 		public override void onReloadScene () {
 			base.onReloadScene ();
 		}
-		public override void onLoadScene () {
-			base.onLoadScene ();
+		public override void onLoadScene (OmniSim.Game game) {
+			base.onLoadScene (game);
 		}
 		public override void onUnloadScene () {
 			base.onUnloadScene ();
