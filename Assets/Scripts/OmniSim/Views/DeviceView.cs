@@ -36,7 +36,6 @@ namespace OmniSim.Views {
 		public override void onUnloadScene () {
 			base.onUnloadScene ();
 		}
-
 		
 		// Use this for initialization
 		void Start () {
