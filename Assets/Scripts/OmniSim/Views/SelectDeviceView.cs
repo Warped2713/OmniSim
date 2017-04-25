@@ -57,7 +57,7 @@ namespace OmniSim.Views {
 
 				// Initialize the device's model using its prefab name
 				string prefabFilepath = "Prefabs/Devices/" + device.PrefabFilename;
-				device.Model = Instantiate (Resources.Load(prefabFilepath, typeof(GameObject))) as GameObject;
+				device.Model = Instantiate (Resources.Load(prefabFilepath, typeof(GameObject)), base.containerObj) as GameObject;
 
 				Vector3 pos = new Vector3 (0f, 0f, 0f);
 				// X component around the XZ plane circle

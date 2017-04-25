@@ -65,7 +65,7 @@ namespace OmniSim.Views {
 				prefabFilepath = "Prefabs/Devices/" + this.device.PrefabFilename;
 				dmod = Resources.Load(prefabFilepath, typeof(GameObject));
 			}
-			this.device.Model = Instantiate (dmod) as GameObject;
+			this.device.Model = Instantiate (dmod, base.containerObj) as GameObject;
 
 			// Set the position of model to distanceToCamera from camera position and centered on XY plane
 			Vector3 campos = GameObject.FindGameObjectWithTag("MainCamera").transform.position;

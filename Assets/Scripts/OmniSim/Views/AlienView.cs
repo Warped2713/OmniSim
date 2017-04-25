@@ -40,7 +40,7 @@ namespace OmniSim.Views {
 			// Load Alien Model
 			this.alien = base.game.getData ().getCurrentAlien();
 			string prefabFilepath = "Prefabs/Aliens/" + this.alien.PrefabFilename;
-			this.alien.Model = Instantiate (Resources.Load(prefabFilepath, typeof(GameObject))) as GameObject;
+			this.alien.Model = Instantiate (Resources.Load(prefabFilepath, typeof(GameObject)), base.containerObj) as GameObject;
 
 			// Set the position of model 
 			//Vector3 campos = GameObject.FindGameObjectWithTag("MainCamera").transform.position;

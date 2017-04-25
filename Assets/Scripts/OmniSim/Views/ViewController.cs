@@ -12,6 +12,8 @@ namespace OmniSim.Views {
 		public bool hasSoloBGM = false;
 		public bool restartBGM = false;
 
+		public Transform containerObj;
+
 		protected Game game;
 		private bool wasLoadedBefore = false;
 
