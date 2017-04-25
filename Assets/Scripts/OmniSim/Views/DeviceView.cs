@@ -130,7 +130,7 @@ namespace OmniSim.Views {
 
 		// Update is called once per frame
 		void Update () {
-
+			
 			// Handle TimeOut Mode
 			if (base.game.getData ().currentMode == "TimeOut") {
 				if (this.timer > 0) {
