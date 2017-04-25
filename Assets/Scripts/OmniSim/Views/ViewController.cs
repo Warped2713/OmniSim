@@ -19,7 +19,10 @@ namespace OmniSim.Views {
 
 		// Use this for initialization
 		void Start () {
-			//this.game.audioManager.PlayAudio (this.BGM_Name);
+			if (this.game == null) { // In the event that Game is not initialized, set stuff up here
+				// Load the master scene
+				UnityEngine.SceneManagement.SceneManager.LoadScene (0, UnityEngine.SceneManagement.LoadSceneMode.Single);
+			}
 		}
 		
 		// Update is called once per frame
