@@ -23,7 +23,9 @@ namespace OmniSim.Behaviors.Camera {
 		public float multiplierZoom = 1f;
 		public float multiplierPan = 1f;
 		public float multiplierRot = 5f;
+
 		public bool orbitHorizBasedOnTarget = false;
+		public bool autoPositionCamera = true;
 
 		// TODO: consider applying a collider to the camera (and models) so that we don't accidentally pass through
 
@@ -41,8 +43,10 @@ namespace OmniSim.Behaviors.Camera {
 				}
 
 				// Adjust position to be close to target
-				this.transform.LookAt (this.targetPos);
-				this.transform.Translate ( new Vector3(0f, 0f, Vector3.Distance (this.targetPos, this.transform.position) - (ZoomMinMaxFromTarget.x + ZoomMinMaxFromTarget.y)/2 ) );
+				if (this.autoPositionCamera) {
+					this.transform.LookAt (this.targetPos);
+					this.transform.Translate (new Vector3 (0f, 0f, Vector3.Distance (this.targetPos, this.transform.position) - (ZoomMinMaxFromTarget.x + ZoomMinMaxFromTarget.y) / 2));
+				}
 			}
 
 			this.initialPos = this.transform.position;

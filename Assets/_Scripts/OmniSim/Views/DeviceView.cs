@@ -75,7 +75,8 @@ namespace OmniSim.Views {
 
 			// Set the position of model to distanceToCamera from camera position and centered on XY plane
 			Vector3 campos = GameObject.FindGameObjectWithTag("MainCamera").transform.position;
-			this.device.Model.transform.position = this.initDevicePos = new Vector3( campos.x, device.Model.transform.localScale.y / 2 - campos.y, campos.z + this.distanceToCamera );
+			//this.device.Model.transform.position = this.initDevicePos = new Vector3( campos.x, device.Model.transform.localScale.y / 2 - campos.y, campos.z + this.distanceToCamera );
+			this.device.Model.transform.position = this.initDevicePos = new Vector3( 0f, 0f, campos.z + this.distanceToCamera );
 
 			// Set rotation
 			if ( this.device.Model.GetComponent<DeviceExtra>() ) {
