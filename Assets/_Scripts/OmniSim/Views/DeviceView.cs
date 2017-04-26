@@ -83,6 +83,9 @@ namespace OmniSim.Views {
 				extraScript.resetToViewRotation ();
 			}
 
+			// Set as the target of the camera manipulator
+			GameObject.FindGameObjectWithTag("MainCamera").GetComponent<OmniSim.Behaviors.Camera.CameraManipulatorFixedPoint>().target = this.device.Model.transform;
+
 			// Set color scheme
 			if ( this.device.Model.GetComponent<DeviceAnim>() ) {
 				this.animScript = this.device.Model.GetComponent<DeviceAnim>();

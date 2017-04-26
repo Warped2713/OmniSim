@@ -54,6 +54,9 @@ namespace OmniSim.Views {
 			this.alien.Model.transform.position = new Vector3( this.alien.Model.transform.position.x + this.positionX, this.alien.Model.transform.position.y + this.positionY, this.alien.Model.transform.position.z + this.positionZ );
 			this.alien.Model.transform.Rotate(initRotation);
 
+			// Set as the target of the camera manipulator
+			GameObject.FindGameObjectWithTag("MainCamera").GetComponent<OmniSim.Behaviors.Camera.CameraManipulatorFixedPoint>().target = this.alien.Model.transform;
+
 			// Initialize Text Fields
 			Text alienName = GameObject.Find("AlienName").GetComponent<Text>();
 			alienName.text = this.alien.AlienName;
