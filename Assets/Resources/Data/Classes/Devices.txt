@@ -1,5 +1,5 @@
-Omnitrix | Original Series | The first ten aliens Ben can use from the Original Series | Original 10 | Omnitrix_OS
-Placeholder 1 | None | A placeholder device to test the initialization script | Demo Set | DemoDevice2
-Placeholder 2 | None | A placeholder device to test the initialization script | Demo Set | DemoDevice2
-Placeholder 3 | None | A placeholder device to test the initialization script | Demo Set | DemoDevice2
-Placeholder 4 | None | A placeholder device to test the initialization script | Demo Set | DemoDevice2
+Omnitrix | Original Series | The first ten aliens Ben can use from the Original Series | Original 10 | Original Series/Omnitrix_OS
+Placeholder 1 | None | A placeholder device preloaded with 2 sample alien models | Demo Set | Debug/DemoDevice
+Placeholder 2 | None | A placeholder device preloaded with 2 sample alien models | Demo Set | Debug/DemoDevice
+Placeholder 3 | None | A placeholder device preloaded with 2 sample alien models | Demo Set | Debug/DemoDevice
+Yar Har Fiddle Dee Dee | None | A placeholder device preloaded with all alien models designed by SpacePirateEyepatch | SpacePirateEyepatch | Debug/SampleDevice

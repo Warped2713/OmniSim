@@ -1,10 +1,10 @@
-Heatblast | Pyronite | Pyros | desc | Placeholder
-Wildmutt | Vulpimancer | Vulpin | desc | Placeholder
-Diamondhead | Petrosapien | Petropia | desc | Placeholder
-XLR8 | Kineceleran | Kinet | desc | OS_XLR8
-Grey Matter | Galvan | Galvan Prime | desc | Placeholder
-Four Arms | Tetramand | Khoros | desc | OS_FourArms
-Stinkfly | Lepidopterran | Lepidopterra | desc | Placeholder
-Ripjaws | Piscciss Volann | Piscciss | desc | Placeholder
-Upgrade | Galvanic Mechamorph | Galvan B | desc | Placeholder
-Ghostfreak | Ectonurite | Anur Phaetos | desc | Placeholder
+Heatblast | Pyronite | Pyros | Model made specifically for OmniSim by SpacePirateEyepatch on Tumblr | Original Series/OS_Heatblast
+Wildmutt | Vulpimancer | Vulpin | Model made specifically for OmniSim by SpacePirateEyepatch on Tumblr | Original Series/OS_Wildmutt
+Diamondhead | Petrosapien | Petropia | Model made specifically for OmniSim by SpacePirateEyepatch on Tumblr | Original Series/OS_DiamondHead
+XLR8 | Kineceleran | Kinet | Model made specifically for OmniSim by SpacePirateEyepatch on Tumblr | Original Series/OS_XLR8
+Grey Matter | Galvan | Galvan Prime | Model made specifically for OmniSim by SpacePirateEyepatch on Tumblr | Original Series/OS_GreyMatter
+Four Arms | Tetramand | Khoros | Model made specifically for OmniSim by SpacePirateEyepatch on Tumblr | Original Series/OS_FourArms
+Stinkfly | Lepidopterran | Lepidopterra | Model made specifically for OmniSim by SpacePirateEyepatch on Tumblr | Original Series/OS_Stinkfly
+Ripjaws | Piscciss Volann | Piscciss | Model made specifically for OmniSim by SpacePirateEyepatch on Tumblr | Original Series/OS_Ripjaws
+Upgrade | Galvanic Mechamorph | Galvan B | Model made specifically for OmniSim by SpacePirateEyepatch on Tumblr | Original Series/OS_Upgrade
+Ghostfreak | Ectonurite | Anur Phaetos | Model made specifically for OmniSim by SpacePirateEyepatch on Tumblr | Original Series/OS_GhostFreak
