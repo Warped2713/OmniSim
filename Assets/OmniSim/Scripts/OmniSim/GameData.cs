@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using OmniSim.Models;
+using OmniSim.Data;
 
 namespace OmniSim {
 
@@ -18,8 +19,23 @@ namespace OmniSim {
 		public string currentPreset;
 		public string currentMode;
 
-		public GameData(string dfile, string afile, string pfile) {
+		readonly ColorScheme defaultColors;
+		readonly ColorScheme customColors;
+		readonly int maxColorSlot;
+		readonly int maxColorScheme;
+
+		public GameData(string dfile, string afile, string pfile, string defColor, string custColor, int maxSlot, int maxScheme) {
 			initializeData(dfile, afile, pfile);
+
+			maxColorSlot = maxSlot;
+			maxColorScheme = maxScheme;
+
+			defaultColors = new ColorScheme (defColor, maxColorSlot, maxColorScheme);
+			customColors = new ColorScheme (custColor, maxColorSlot, maxColorScheme);
+			if (customColors.data == null) {
+				defaultColors.SaveToFile (custColor);
+				customColors = defaultColors.Copy();
+			}
 		}
 
 		private void initializeData(string dfile, string afile, string pfile) {
