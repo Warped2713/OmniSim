@@ -75,11 +75,16 @@ namespace OmniSim.Data {
 		}
 
 		public ColorScheme (string file, int maxColorSlot, int maxColorScheme) {
-			TextAsset filedata = Resources.Load (file) as TextAsset;
-			if (filedata) {
-				this.data = JsonUtility.FromJson<ColorSchemeData> (filedata.text);
+			//TextAsset filedata = new TextAsset (); //Resources.Load (file) as TextAsset;
 
-				if (this.data.schemes != null) {
+			Debug.Log (file);
+
+			string filedata = "" + System.IO.File.ReadAllText (Application.dataPath + "/OmniSim/Resources/" + file + ".txt");
+
+			if (filedata != "") {
+				this.data = JsonUtility.FromJson<ColorSchemeData> (filedata);
+
+				if (this.data != null && this.data.schemes != null) {
 					this.setColor32 ();
 				} else {
 					this.data = null;
@@ -114,7 +119,7 @@ namespace OmniSim.Data {
 
 			string json = JsonUtility.ToJson (data);
 
-			file = "Assets/OmniSim/Resources/" + file + ".json";
+			file = Application.dataPath + "/OmniSim/Resources/" + file + ".txt";
 			System.IO.File.WriteAllText (file, json, System.Text.Encoding.UTF8);
 
 			/*if ( !System.IO.File.Exists (file) ) {

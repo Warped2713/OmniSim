@@ -12,7 +12,7 @@ namespace OmniSim.Behaviors.Menu {
 
 		public int maxColorSlot = 50;
 		public int maxColorScheme = 50;
-		public int numSlotVisible = 6;
+		public int numSlotVisible = 7;
 		public int slotFill = 3;
 		public int slotPad = 1;
 
@@ -126,7 +126,7 @@ namespace OmniSim.Behaviors.Menu {
 		// Encode tempTex as a readable ARGB32 PNG file
 		private void SaveTextureToPNG() {
 			byte[] texBytes = tempTex.EncodeToPNG ();
-			System.IO.File.WriteAllBytes (Application.dataPath + "Data/ColorSchemes/OS_Custom.png", texBytes);
+			System.IO.File.WriteAllBytes (Application.dataPath + "/OmniSim/Resources/Data/ColorSchemes/OS_Custom.png", texBytes);
 		}
 
 		private void UpdateMaterials () {

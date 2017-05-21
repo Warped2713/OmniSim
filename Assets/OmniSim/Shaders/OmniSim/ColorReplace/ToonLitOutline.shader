@@ -6,6 +6,7 @@
 		_MainTex ("Base (RGB)", 2D) = "white" {}
 		_SwapTex ("Color Replacement Matrix", 2D) = "transparent" {}
 		_SwapIndex ("Color Scheme Row ID", Range(0,1)) = 0.875
+		_OverColor ("Additional Color", Color) = (0.5,0.5,0.5,1)
 		_OverTex ("Additional Texture Layer (Alpha)", 2D) = "transparent" {}
 		_Ramp ("Toon Ramp (RGB)", 2D) = "gray" {} 
 	}
