@@ -18,9 +18,11 @@ namespace OmniSim {
 		public int currentAlien;
 		public string currentPreset;
 		public string currentMode;
+		public string currentSet;
+		public int currentColor;
 
-		readonly ColorScheme defaultColors;
-		readonly ColorScheme customColors;
+		public ColorScheme defaultColors;
+		public ColorScheme customColors;
 		readonly int maxColorSlot;
 		readonly int maxColorScheme;
 
@@ -36,6 +38,7 @@ namespace OmniSim {
 				defaultColors.SaveToFile (custColor);
 				customColors = defaultColors.Copy();
 			}
+			currentColor = 0;
 		}
 
 		private void initializeData(string dfile, string afile, string pfile) {
